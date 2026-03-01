@@ -1,0 +1,205 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+@source "../../../packages/ui/src";
+
+@theme {
+  --color-primary: #008578;
+  --color-primary-hover: #006a60;
+  --color-primary-light: #e6f3f2;
+  --color-brand-accent: #FF9800;
+  --color-brand-accent-hover: #e68a00;
+  --color-base-bg: #F8FAFC;
+  --color-base-surface: #FFFFFF;
+  --color-border-main: #E2E8F0;
+  --color-text-main: #333333;
+  --color-text-muted: #666666;
+  --color-text-light: #999999;
+  --color-status-success: #2E7D32;
+  --color-status-error: #D32F2F;
+  --color-status-warning: #EF6C00;
+  --color-status-info: #0288D1;
+  --color-expressive-sky: #00B5AD;
+  --color-expressive-sunset: #FF5722;
+
+  --font-sans: "Noto Sans JP", sans-serif;
+  --font-en: "Montserrat", sans-serif;
+
+  /* Soshosai カスタム角丸 (Shadcnのデフォルトより丸みを強調) */
+  --radius-sm: 6px;
+  /* タグ・バッジ、小さな要素 */
+  --radius-md: 12px;
+  /* ボタン、入力フォーム (デフォルト) */
+  --radius-lg: 16px;
+  /* カード、アラート */
+  --radius-xl: 24px;
+  /* モーダル、大きなセクション */
+  --radius-full: 9999px;
+  /* 円形ボタン、ピル型タグ */
+
+  /* Soshosai カスタムシャドウ (ベースカラーの会津グリーンをほんのり混ぜた影) */
+  --shadow-sm: 0 2px 8px -2px rgba(0, 133, 120, 0.08), 0 1px 2px -1px rgba(0, 133, 120, 0.04);
+  --shadow-md: 0 4px 12px -4px rgba(0, 133, 120, 0.12), 0 2px 4px -2px rgba(0, 133, 120, 0.06);
+  --shadow-lg: 0 8px 24px -8px rgba(0, 133, 120, 0.16), 0 4px 8px -4px rgba(0, 133, 120, 0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* サイドバー用スクロールバーのカスタマイズ */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* Backgrounds & Text */
+  --background: #F8FAFC;
+  --foreground: #333333;
+  --card: #FFFFFF;
+  --card-foreground: #333333;
+  --popover: #FFFFFF;
+  --popover-foreground: #333333;
+
+  /* Soshosai Brand Primary */
+  --primary: #008578;
+  --primary-foreground: #FFFFFF;
+
+  /* Soshosai Secondary (Primary Light) */
+  --secondary: #e6f3f2;
+  --secondary-foreground: #006a60;
+
+  /* Muted */
+  --muted: #f1f5f9;
+  --muted-foreground: #666666;
+
+  /* Accent - Shadcn Subtle hover background (NOT brand accent) */
+  --accent: #f1f5f9;
+  --accent-foreground: #333333;
+
+  /* Destructive - Status Error */
+  --destructive: #D32F2F;
+  --destructive-foreground: #FFFFFF;
+
+  /* Borders & Inputs */
+  --border: #E2E8F0;
+  --input: #E2E8F0;
+  --ring: #008578;
+
+  /* Charts mapping to brand colors */
+  --chart-1: #008578;
+  --chart-2: #FF9800;
+  --chart-3: #00B5AD;
+  --chart-4: #FF5722;
+  --chart-5: #0288D1;
+
+  /* Sidebar */
+  --sidebar: #F8FAFC;
+  --sidebar-foreground: #333333;
+  --sidebar-primary: #008578;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #e6f3f2;
+  --sidebar-accent-foreground: #006a60;
+  --sidebar-border: #E2E8F0;
+  --sidebar-ring: #008578;
+}
+
+.dark {
+  --background: #1e293b;
+  --foreground: #f8fafc;
+  --card: #0f172a;
+  --card-foreground: #f8fafc;
+  --popover: #0f172a;
+  --popover-foreground: #f8fafc;
+
+  --primary: #008578;
+  --primary-foreground: #FFFFFF;
+
+  --secondary: #1e293b;
+  --secondary-foreground: #f8fafc;
+
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+
+  --accent: #1e293b;
+  --accent-foreground: #f8fafc;
+
+  --destructive: #D32F2F;
+  --destructive-foreground: #FFFFFF;
+
+  --border: #334155;
+  --input: #334155;
+  --ring: #008578;
+
+  --chart-1: #008578;
+  --chart-2: #FF9800;
+  --chart-3: #00B5AD;
+  --chart-4: #FF5722;
+  --chart-5: #0288D1;
+
+  --sidebar: #0f172a;
+  --sidebar-foreground: #f8fafc;
+  --sidebar-primary: #008578;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #1e293b;
+  --sidebar-accent-foreground: #f8fafc;
+  --sidebar-border: #334155;
+  --sidebar-ring: #008578;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
