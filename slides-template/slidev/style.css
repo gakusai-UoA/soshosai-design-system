@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Noto+Sans+JP:wght@400;700;900&display=swap');
+
+:root {
+  --slidev-theme-primary: #008578;
+  --slidev-theme-accent: #FF9800;
+  --slidev-theme-background: #F8FAFC;
+  --slidev-theme-text: #333333;
+}
+
+.slidev-layout {
+  font-family: 'Montserrat', 'Noto Sans JP', sans-serif;
+  color: #333333;
+  padding: 5rem 6.5rem; /* Unified with Marp 85px 100px */
+  background-color: var(--slidev-theme-background);
+  letter-spacing: 0.02em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--slidev-theme-primary);
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 3.5rem;
+  border-bottom: 4px solid var(--slidev-theme-primary);
+  padding-bottom: 0.5rem;
+}
+
+strong {
+  color: var(--slidev-theme-accent);
+  font-weight: 700;
+}
+
+a {
+  color: var(--slidev-theme-primary);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+blockquote {
+  border-left: 8px solid var(--slidev-theme-primary);
+  background: #e6f3f2;
+  padding: 1rem 1.5rem;
+  border-radius: 4px;
+  font-style: italic;
+}
+
+code {
+  font-family: 'Montserrat', monospace;
+  background: #E2E8F0;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+pre {
+  line-height: 1.2 !important;
+}
+
+/* Header / Footer (Unified with Marp absolute positions) */
+
+header, footer {
+  font-size: 1.1rem;
+  position: absolute;
+  z-index: 10;
+}
+
+header {
+  top: 1.5rem;
+  left: 3rem;
+  color: var(--slidev-theme-primary);
+  font-weight: 700;
+}
+
+footer {
+  bottom: 1.5rem;
+  right: 3rem;
+  color: #666666;
+}
+
+/* Specific Layouts */
+
+.slidev-layout.cover {
+  background-color: var(--slidev-theme-primary);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.slidev-layout.cover h1 {
+  color: white;
+  font-size: 5rem;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+  border-bottom: none;
+}
+
+.slidev-layout.cover h2 {
+  color: #e6f3f2;
+  font-size: 2.2rem;
+  font-weight: 400;
+}
+
+.slidev-layout.cover p, .slidev-layout.cover span {
+  opacity: 0.9;
+}
+
+/* White text for header/footer and links on cover slides */
+.slidev-layout.cover header, 
+.slidev-layout.cover footer,
+.slidev-layout.cover a {
+  color: #FFFFFF;
+}
+
+.slidev-layout.section {
+  background-color: #e6f3f2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slidev-layout.section h2 {
+  font-size: 3.5rem;
+  border-left: 12px solid var(--slidev-theme-primary);
+  padding-left: 1.5rem;
+}
+
+/* Accent Layout (Unified with Marp's redesigned accent slide) */
+.slidev-layout.fact {
+  background-color: #FFFFFF;
+  border-left: 2rem solid var(--slidev-theme-accent);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.slidev-layout.fact h2, .slidev-layout.fact p {
+  color: var(--slidev-theme-primary);
+}
+
+/* Bullet points */
+ul {
+  list-style-type: none;
+  padding-left: 1.5rem;
+}
+
+ul li::before {
+  content: '■';
+  color: var(--slidev-theme-primary);
+  display: inline-block;
+  width: 1.5em;
+  margin-left: -1.5em;
+  font-size: 0.8em;
+  vertical-align: middle;
+}
+
+/* --- Advanced Layouts --- */
+
+.giant-number {
+  font-size: 15rem;
+  font-weight: 900;
+  color: var(--slidev-theme-primary);
+  line-height: 1;
+  margin: 0;
+}
+
+.caption-box {
+  background: #FFFFFF;
+  border: 4px solid #333333;
+  border-radius: 1.5rem;
+  padding: 1.5rem 3rem;
+  font-size: 2.2rem;
+  font-weight: 700;
+  display: inline-block;
+  margin-top: 1rem;
+  box-shadow: 0.5rem 0.5rem 0 rgba(0, 133, 120, 0.2);
+}
+
+.arrow-cta {
+  font-size: 8rem;
+  color: var(--slidev-theme-accent);
+  position: absolute;
+  bottom: 4rem;
+  right: 6rem;
+}
+
+.device-frame {
+  border: 0.8rem solid #1e1e1e;
+  border-radius: 2.5rem;
+  overflow: hidden;
+  box-shadow: 0 1.2rem 2.5rem rgba(0, 0, 0, 0.2);
+}
